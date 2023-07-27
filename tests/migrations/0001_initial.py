@@ -2,8 +2,10 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import wagtail.core.blocks
-import wagtail.core.fields
+
+import wagtail.blocks as wagtail_blocks
+import wagtail.fields as wagtail_fields
+    
 import wagtail_webstories.blocks
 
 
@@ -26,7 +28,7 @@ class Migration(migrations.Migration):
                 ('poster_square_src', models.URLField(blank=True, max_length=2047, verbose_name='Poster square image URL')),
                 ('poster_landscape_src', models.URLField(blank=True, max_length=2047, verbose_name='Poster landscape image URL')),
                 ('custom_css', models.TextField(blank=True)),
-                ('pages', wagtail.core.fields.StreamField([('page', wagtail.core.blocks.StructBlock([('id', wagtail.core.blocks.CharBlock()), ('html', wagtail_webstories.blocks.AMPCleanHTMLBlock())]))])),
+                ('pages', wagtail_fields.StreamField([('page', wagtail_blocks.StructBlock([('id', wagtail_blocks.CharBlock()), ('html', wagtail_webstories.blocks.AMPCleanHTMLBlock())]))])),
             ],
             options={
                 'abstract': False,

@@ -1,9 +1,11 @@
+import responses
 import shutil
 
 from django.test import TestCase
 from requests.exceptions import HTTPError
-import responses
-from wagtail.core.models import Site
+
+from wagtail.models import Site
+    
 from wagtail.images.models import Image
 from wagtailmedia.models import Media
 

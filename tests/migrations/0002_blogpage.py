@@ -2,8 +2,10 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import wagtail.core.blocks
-import wagtail.core.fields
+
+import wagtail.blocks as wagtail_blocks
+import wagtail.fields as wagtail_fields
+
 import wagtail_webstories.blocks
 
 
@@ -19,7 +21,7 @@ class Migration(migrations.Migration):
             name='BlogPage',
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
-                ('body', wagtail.core.fields.StreamField([('heading', wagtail.core.blocks.CharBlock()), ('story_embed', wagtail_webstories.blocks.StoryEmbedBlock()), ('story_link', wagtail_webstories.blocks.StoryChooserBlock())])),
+                ('body', wagtail_fields.StreamField([('heading', wagtail_blocks.CharBlock()), ('story_embed', wagtail_webstories.blocks.StoryEmbedBlock()), ('story_link', wagtail_webstories.blocks.StoryChooserBlock())])),
             ],
             options={
                 'abstract': False,

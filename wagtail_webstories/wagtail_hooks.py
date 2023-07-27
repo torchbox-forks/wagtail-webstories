@@ -1,7 +1,8 @@
 from django.conf import settings
-from django.urls import path, include, reverse
+from django.urls import include, path, reverse
+
+from wagtail import hooks
 from wagtail.admin.menu import MenuItem
-from wagtail.core import hooks
 
 from . import admin_urls
 

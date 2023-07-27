@@ -1,8 +1,9 @@
 import json
+import responses
 
 from django.test import TestCase
-import responses
-from wagtail.core.models import Site
+
+from wagtail.models import Site
 
 from tests.models import BlogPage, StoryPage
 

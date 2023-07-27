@@ -2,10 +2,11 @@ import shutil
 
 from django.contrib.auth.models import User
 from django.test import override_settings
-from wagtail.core.models import Page
+
 from wagtail.images.models import Image
-from wagtail.tests.utils import WagtailPageTests
-from wagtail.tests.utils.form_data import nested_form_data, streamfield
+from wagtail.models import Page
+from wagtail.test.utils import WagtailPageTests
+from wagtail.test.utils.form_data import nested_form_data, streamfield
 
 from tests.models import StoryPage
 from tests.utils import get_test_image_file, TEST_MEDIA_DIR

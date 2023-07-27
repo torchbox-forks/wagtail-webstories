@@ -1,6 +1,4 @@
 import os
-from wagtail import VERSION as WAGTAIL_VERSION
-
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,7 +24,7 @@ INSTALLED_APPS = [
     'wagtail.images',
     'wagtail.search',
     'wagtail.admin',
-    'wagtail.core',
+    'wagtail',
 
     'modelcluster',
     'taggit',
@@ -50,11 +48,6 @@ MIDDLEWARE = [
 
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
-
-if WAGTAIL_VERSION < (2, 9):
-    MIDDLEWARE += [
-        'wagtail.core.middleware.SiteMiddleware',
-    ]
 
 ROOT_URLCONF = 'tests.urls'
 
@@ -142,5 +135,7 @@ SECRET_KEY = 'not needed'
 # Wagtail settings
 
 WAGTAIL_SITE_NAME = "wagtail-transfer"
-BASE_URL = 'http://example.com'
+
+WAGTAILADMIN_BASE_URL = 'http://example.com'
+
 WAGTAIL_WEBSTORIES_IMPORT_MODEL = 'tests.StoryPage'
